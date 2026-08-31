@@ -5,9 +5,7 @@ public:
         //keeps track of dollar bills
         int fives=0;
         int tens = 0;
-        int twentys = 0;
-        int total_amount = 0;
-
+    
         for(int i = 0; i < bills.size(); i++){
   
             
@@ -24,7 +22,6 @@ public:
                     fives--;
                     break;
                 case 20:
-                    twentys++;
                     if((tens*10+fives*5)>=15 && fives>=1)
                         if(tens>=1){
                             tens--;
@@ -38,7 +35,6 @@ public:
                     
           
             }   
-              total_amount = bills[i] + total_amount;
         }
         return(1);
     }

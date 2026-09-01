@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int passThePillow(int n, int time) {
+        int person = 1;
+        int direction = 1; //keeps track of direction
+
+        //loop to check if we still have time
+        while(time!=0){
+            person+= direction;
+            //check wether person is at the front or end of the line
+            if(person==n||person==1)
+                direction = -direction; //flips direction by flipping sign
+            time--;
+        }
+      return person;
+    }
+};

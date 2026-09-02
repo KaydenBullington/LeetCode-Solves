@@ -1,0 +1,19 @@
+class Solution {
+public:
+    string intToRoman(int num) {
+        string ones[] = {"","I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+        string tens[] = {"","X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
+        string huns[] = {"","C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"};
+        string thos[] = {"","M", "MM", "MMM"};
+        string answer = "";
+
+        int ones_place = num % 10;
+        int tens_place = (num % 100) / 10;
+        int huns_place = (num % 1000) / 100;
+        int thos_place = (num % 10000) / 1000;
+
+        answer += thos[thos_place] + huns[huns_place] + tens[tens_place] + ones[ones_place];
+
+        return answer;
+    }
+};

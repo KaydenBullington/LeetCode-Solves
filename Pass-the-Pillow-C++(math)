@@ -1,0 +1,13 @@
+class Solution {
+public:
+    int passThePillow(int n, int time) {
+        //last cycle
+        int last = time % (2*(n-1));
+        if(last<n)
+            return 1 + last;
+        else
+            last -= (n-1);
+
+        return n-last;
+    }
+};
